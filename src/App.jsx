@@ -31,7 +31,7 @@ function App() {
       {path:'categories/',element:<ProtectedRoute><Categories/></ProtectedRoute>},
       {path:'brands/',element:<ProtectedRoute><Brands/></ProtectedRoute>},
       {path:'shippingaddress/:cartId',element:<ProtectedRoute><ShippingAddress/></ProtectedRoute>},
-      {path:'allorders/',element:<ProtectedRoute><Allorders/></ProtectedRoute>},
+      {path:'/allorders/',element:<ProtectedRoute><Allorders/></ProtectedRoute>},
       {path:'wishlist/',element:<ProtectedRoute><WishList/></ProtectedRoute>},
       {path:'ProductDetails/:id',element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
       {path:'resetpassword/',element:<ResetPassword/>},

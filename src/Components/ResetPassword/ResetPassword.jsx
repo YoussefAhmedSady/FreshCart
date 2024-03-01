@@ -10,13 +10,18 @@ import * as yup from 'yup'
 const ResetPassword = () => {
     let navigate=useNavigate()  
     const [laoding, setlaoding] = useState(false);
-    const [apiErrore, setapiErrore] = useState(null);
     async function ResetPassword(values) {
         setlaoding(true)
-        console.log(values);
         let {data}=await axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,values)
         console.log(data);
         setlaoding(false)
+        if(data.token){
+            toast.success('Email and Password are update')
+            navigate('/Login')
+        }else{
+            toast.error(data.message)
+            setlaoding(false)
+        }
     }
     let validationSchema=yup.object({
         email:yup.string().required('email is required').email('invalid email'),

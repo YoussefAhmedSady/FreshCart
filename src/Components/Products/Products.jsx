@@ -47,7 +47,7 @@ const Products = () => {
 
 }
 function test(id){
-  if(Check.includes(id)){
+  if(Check?.includes(id)){
   return  <i className="fa-solid fa-heart fs-2 text-danger"></i>
   }else{
     return <i className="fa-solid fa-heart fs-2"></i>

@@ -9,13 +9,13 @@ const [cartItenms, setcartItenms] = useState(null);
 const [Loading, setLoading] = useState(true);
 async function getItems() {
     let {data}=await getCartItem()
-    console.log(data);
-    if(data.status=='success'){
+    if(data?.status=='success'){
     setcartItenms(data)
     setLoading(false)
     setcount(data.numOfCartItems)
-    }
-}
+    }else{
+setLoading(false)
+}}
 const {setcount} = useContext(CartContext);
 async function deleteItems(id) {
     setLoading(true)
@@ -81,7 +81,7 @@ useEffect(()=>{getItems()},[])
         </div>
         
         
-       :<div className='mt-5 py-5'>Cart is Empty</div> }
+       :<div className='mt-5 py-5 fs-1 fw-bolder text-center'>Cart is Empty</div> }
     </>
 }
 
