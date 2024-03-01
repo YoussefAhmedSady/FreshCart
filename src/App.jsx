@@ -26,19 +26,19 @@ function App() {
   let routes=createHashRouter([
     {path:'',element:<Layout/>,children:[
       {index:true,element:<ProtectedRoute><Home/></ProtectedRoute>},
-      {path:'cart',element:<ProtectedRoute><Cart/></ProtectedRoute>},
-      {path:'products',element:<ProtectedRoute><Products/></ProtectedRoute>},
-      {path:'categories',element:<ProtectedRoute><Categories/></ProtectedRoute>},
-      {path:'brands',element:<ProtectedRoute><Brands/></ProtectedRoute>},
-      {path:'shippingaddress/:cartId',element:<ProtectedRoute><ShippingAddress/></ProtectedRoute>},
-      {path:'allorders',element:<ProtectedRoute><Allorders/></ProtectedRoute>},
-      {path:'wishlist',element:<ProtectedRoute><WishList/></ProtectedRoute>},
-      {path:'ProductDetails/:id',element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
-      {path:'resetpassword',element:<ResetPassword/>},
-      {path:'register',element:<Register/>},
-      {path:'getemail',element:<GetEmail/>},
-      {path:'login',element:<Login/>},
-      {path:'*',element:<NotFound/>},
+      {path:'FreshCart/cart',element:<ProtectedRoute><Cart/></ProtectedRoute>},
+      {path:'FreshCart/products',element:<ProtectedRoute><Products/></ProtectedRoute>},
+      {path:'FreshCart/categories',element:<ProtectedRoute><Categories/></ProtectedRoute>},
+      {path:'FreshCart/brands',element:<ProtectedRoute><Brands/></ProtectedRoute>},
+      {path:'FreshCart/shippingaddress/:cartId',element:<ProtectedRoute><ShippingAddress/></ProtectedRoute>},
+      {path:'FreshCart/allorders',element:<ProtectedRoute><Allorders/></ProtectedRoute>},
+      {path:'FreshCart/wishlist',element:<ProtectedRoute><WishList/></ProtectedRoute>},
+      {path:'FreshCart/ProductDetails/:id',element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
+      {path:'FreshCart/resetpassword',element:<ResetPassword/>},
+      {path:'FreshCart/register',element:<Register/>},
+      {path:'FreshCart/getemail',element:<GetEmail/>},
+      {path:'FreshCart/login',element:<Login/>},
+      {path:'FreshCart/*',element:<NotFound/>},
     ]}
 ])
 let {setUserToken}= useContext(UserContext)
@@ -50,7 +50,7 @@ useEffect(()=>{
   return <>
       
       <CounterContextProvider>
-      <HashRouter routes={routes}></HashRouter>
+      <RouterProvider routes={routes}></RouterProvider>
       <Toaster/>
       </CounterContextProvider>
       
