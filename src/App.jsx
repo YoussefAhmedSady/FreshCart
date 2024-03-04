@@ -20,6 +20,7 @@ import ShippingAddress from './Components/ShippingAddress/ShippingAddress';
 import Allorders from './Components/Allorders/Allorders';
 import GetEmail from './Components/GetEmail/GetEmail';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
+import ProtectRest from './Components/ProtectRest/ProtectRest';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
       {path:'/allorders/',element:<ProtectedRoute><Allorders/></ProtectedRoute>},
       {path:'wishlist/',element:<ProtectedRoute><WishList/></ProtectedRoute>},
       {path:'ProductDetails/:id',element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
-      {path:'resetpassword/',element:<ResetPassword/>},
+      {path:'resetpassword/',element:<ProtectRest><ResetPassword/></ProtectRest>},
       {path:'register/',element:<Register/>},
       {path:'getemail/',element:<GetEmail/>},
       {path:'login/',element:<Login/>},

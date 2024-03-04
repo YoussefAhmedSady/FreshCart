@@ -4,7 +4,7 @@ import img1 from '../../Assets/images/img2.png'
 import img2 from '../../Assets/images/img3.png'
 const Footer = () => {
     return <>
-    <div className=" mx-auto p-5 light1">
+    <div className="  mx-auto p-5 light1">
     <h2>Get the freshCartapp</h2>
     <p className='fs-4'>we will send a link,open to your phone to download the app</p>
     <div className="row align-items-center justify-content-center">

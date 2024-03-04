@@ -13,7 +13,6 @@ const ResetPassword = () => {
     async function ResetPassword(values) {
         setlaoding(true)
         let {data}=await axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,values)
-        console.log(data);
         setlaoding(false)
         if(data.token){
             toast.success('Email and Password are update')

@@ -28,7 +28,6 @@ export default function CartContextProvider(props) {
     async function getItems() {
         let {data}=await getCartItem()
         setcartItenms(data)
-      
     }
  
     function deleteCartItem(productId) {

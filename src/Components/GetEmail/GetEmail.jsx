@@ -15,8 +15,10 @@ const GetEmail = () => {
         values
         )
         if(data.statusMsg=='success'){
+            let email={values};
             toast.success(data.message,{duration:2000})
             setcompare(true)
+            localStorage.setItem('email',JSON.stringify(email))
           }else{
             toast.error(data.message,{duration:2000})
           }
@@ -36,7 +38,6 @@ const GetEmail = () => {
         
     })
     async function compareCode(values) {
-        console.log(values);
         let {data}=await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,
         values
         )
@@ -52,8 +53,9 @@ const GetEmail = () => {
     }
     return <>
     <div className="w-75 mx-auto py-4 mt-5" >
-    <h2>SetEmail</h2>
-   {compare==false?     <form onSubmit={formik.handleSubmit}>
+    
+   {compare==false?<form onSubmit={formik.handleSubmit}>
+   <h2>SetEmail</h2>
         <label htmlFor="email">Email : </label>
         <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" placeholder='Enter your Email' id='email' name='email' className='form-control mb-3' />
         {laoding==true?<button  className='btn bg-main text-white fs-4 fw-bold' type='submit'> <Bars

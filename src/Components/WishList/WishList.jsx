@@ -14,7 +14,6 @@ async function getItems() {
     let {data}=await getWishItem()
     setWishItenms(data)
     setLoading(false)
-    
 }
 let {addToCart,setcount}= useContext(CartContext)
 
@@ -22,7 +21,6 @@ async function PostToCart(id) {
   let {data}=await addToCart(id)
   if(data.status=='success'){
     toast.success(data.message,{duration:2000})
-    setcount(data.numOfCartItems)
   
   }else{
     toast.error(data.message,{duration:2000})
@@ -33,11 +31,11 @@ async function deletWish(id) {
     getItems()
     if(data.status=='success'){
         toast.success(data.message,{duration:2000})
-        setcount(data.numOfCartItems)
       
       }else{
         toast.error(data.message,{duration:2000})
       }
+  
 }
 useEffect(()=>{getItems()},[])
     return <>
