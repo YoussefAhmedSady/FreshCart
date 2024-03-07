@@ -42,6 +42,9 @@ function App() {
       {path:'*/',element:<NotFound/>},
     ]}
 ])
+if(window.location.href=='http://localhost:3000/allorders'){
+  window.location.href='https://youssefahmedsady.github.io/FreshCart/#/allorders'
+}
 let {setUserToken}= useContext(UserContext)
 useEffect(()=>{
   if(localStorage.getItem('userToken')){

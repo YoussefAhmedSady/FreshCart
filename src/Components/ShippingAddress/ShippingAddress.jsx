@@ -8,6 +8,7 @@ const ShippingAddress = () => {
     let {data}=await checkOutSession(cartId,values)
     console.log(data);
     if(data.status=='success'){
+        console.log(data);
         window.location.href=data?.session.url
     }
     }
