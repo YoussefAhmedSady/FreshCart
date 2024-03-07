@@ -56,7 +56,7 @@ const ProductDetails = () => {
       }
     }
     let {getWishItem,addToWishList}= useContext(WishListContext)
-    const [Check, setCheck] = useState([]);
+    const [Check, setCheck] = useState(['0000000000000000000000000000']);
     async function getItems() {
       let {data}=await getWishItem()
       setCheck(data?.data.map((id)=>{
@@ -65,7 +65,7 @@ const ProductDetails = () => {
   
   }
   function test(id){
-    if(Check.includes(id)){
+    if(Check?.includes(id)){
     return  <i className="fa-solid fa-heart fs-2 text-danger"></i>
     }else{
       return <i className="fa-solid fa-heart fs-2"></i>
@@ -98,7 +98,7 @@ const ProductDetails = () => {
         <span className='text-main fw-bold font-sm'>{Details.category.name}</span>
         <div className="d-flex justify-content-between align-items-center py-2 fw-bold">
         <span className='font-sm'>{Details.price} EGP</span>
-        <span className='' onClick={()=>{postToWishList(Details._id)}}> {test(Details.id)}</span>
+        <span className='' onClick={()=>{postToWishList(Details._id)}}> {test(Details._id)}</span>
         <span><i className='fas fa-star rating-color me-1'></i>{Details.ratingsAverage}</span>
         </div>
         <button className='btn bg-main w-100 text-white ' onClick={()=>{PostToCart(Details._id)}}>AddToCart</button>

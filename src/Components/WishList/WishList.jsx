@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 const WishList = () => {
     let{getWishItem,deleteWishItem}=useContext(WishListContext)
-    const [WishItenms, setWishItenms] = useState(null);
+    const [WishItenms, setWishItenms] = useState([]);
 const [Loading, setLoading] = useState(true);
 async function getItems() {
     let {data}=await getWishItem()
