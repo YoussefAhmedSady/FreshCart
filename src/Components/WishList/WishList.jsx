@@ -12,8 +12,12 @@ const WishList = () => {
 const [Loading, setLoading] = useState(true);
 async function getItems() {
     let {data}=await getWishItem()
+  if(data!==undefined){
     setWishItenms(data)
     setLoading(false)
+  }else{
+    
+  }
 }
 let {addToCart,setcount}= useContext(CartContext)
 
