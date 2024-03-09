@@ -8,7 +8,7 @@ const CategoriesSlider = () => {
         dots: false,
         infinite: true,
         speed: 1000,
-        slidesToShow: 6,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay:true,
         autoplaySpeed:2000
@@ -20,7 +20,7 @@ const CategoriesSlider = () => {
     return <>
      <div className="row mt-3 w-90 mx-auto cursor-pointer">
      <Slider {...settings}>
-            {data?.data.data.map(category=><div key={category._id} className='col-md-2'>
+            {data?.data.data.map(category=><div key={category._id} className='col-md-2 '>
                 <div className="image">
                     <img src={category.image} alt="" className='w-100' height={300}/>
                     <p>{category.name}</p>
